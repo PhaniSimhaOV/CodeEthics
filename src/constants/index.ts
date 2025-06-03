@@ -1,8 +1,26 @@
+export const appRoute = Object.freeze({
+  home: '/',
+  about: '/about',
+  services: '/services',
+  faqs: '/faqs',
+  careers: '/careers',
+  contact: '/contact',
+})
+
+export const routeMap = Object.freeze({
+  '/': 'Home',
+  '/about': 'About Us',
+  '/services': 'Services',
+  '/faqs': 'FAQs',
+  '/careers': 'Careers',
+  '/contact': 'Contact Us',
+})
+
 export const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'About Us', href: '/about' },
-  { name: 'Services', href: '/services' },
-  { name: 'FAQs', href: '/faqs' },
-  { name: 'Careers', href: '/careers' },
-  { name: 'Contact Us', href: '/contact' },
+  { name: routeMap[appRoute.home], href: appRoute.home },
+  { name: routeMap[appRoute.about], href: appRoute.about },
+  { name: routeMap[appRoute.services], href: appRoute.services },
+  { name: routeMap[appRoute.faqs], href: appRoute.faqs },
+  { name: routeMap[appRoute.careers], href: appRoute.careers },
+  { name: routeMap[appRoute.contact], href: appRoute.contact },
 ]
