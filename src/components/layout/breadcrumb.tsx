@@ -21,14 +21,17 @@ const BreadcrumbSection = () => {
                   <nav className="mt-6">
                     <ul className="flex items-center justify-center space-x-2">
                       <li>
-                        <Link href={appRoute.home} className="text-primary hover:text-primary/80">
+                        <Link
+                          href={appRoute.home}
+                          className="text-muted-foreground font-medium hover:text-primary/80"
+                        >
                           Home
                         </Link>
                       </li>
                       <li>
                         <span className="mx-2">/</span>
                       </li>
-                      <li className="text-blue-500" aria-current="page">
+                      <li className="text-primary font-medium" aria-current="page">
                         {routeName}
                       </li>
                     </ul>
