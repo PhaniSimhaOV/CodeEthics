@@ -8,22 +8,35 @@ import Image from 'next/image'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Separator } from '@radix-ui/react-separator'
 import { navigation } from '@/constants'
+import { useState } from 'react'
 
 export function Header() {
   const pathname = usePathname()
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  if (typeof window !== 'undefined') {
+    window?.addEventListener('scroll', () => {
+      setIsScrolled(window.scrollY >= 90)
+    })
+  }
 
   return (
-    <header className="bg-background border-b sticky top-0 z-50">
+    <header
+      className={cn(
+        'border-b fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        isScrolled ? 'bg-background py-2' : 'bg-transparent py-6',
+      )}
+    >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">
               <Image
                 src="/images/logo.png"
                 alt="Code Ethics Logo"
-                width={150}
-                height={50}
+                width={196}
+                height={40}
                 className="rounded-lg"
               />
             </Link>
