@@ -123,3 +123,9 @@
     @apply mx-auto;
   }
 }
+
+@layer components {
+  .social-figure {
+    @apply w-[150px] h-[150px] rounded-sm object-contain bg-white;
+  }
+}

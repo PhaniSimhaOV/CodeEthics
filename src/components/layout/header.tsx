@@ -7,15 +7,7 @@ import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Separator } from '@radix-ui/react-separator'
-
-const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'About Us', href: '/about' },
-  { name: 'Services', href: '/services' },
-  { name: 'FAQs', href: '/faqs' },
-  { name: 'Careers', href: '/careers' },
-  { name: 'Contact Us', href: '/contact' },
-]
+import { navigation } from '@/constants'
 
 export function Header() {
   const pathname = usePathname()
