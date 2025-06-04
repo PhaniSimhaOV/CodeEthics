@@ -22,9 +22,21 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+    theme: 'dark',
     meta: {
       title: 'Code Ethics',
       description: 'Code Ethics is a platform for sharing and discussing ethical coding practices.',
+      icons: [
+        {
+          url: '/images/icons/favicon.ico',
+        },
+      ],
+    },
+    components: {
+      graphics: {
+        Icon: './components/Icon',
+        Logo: './components/Logo',
+      },
     },
   },
   collections: [Users, Media, JobOpenings, Clients],
