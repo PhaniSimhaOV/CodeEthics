@@ -1,17 +1,18 @@
 import React from 'react'
 import { Button } from '@/components/ui/button'
+// import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
 import { Separator } from '../ui/separator'
 
 const HomeHeroSection = () => {
   return (
-    <section className="hero-gradient py-20 lg:py-32 bg-[url('/images/line-bg.png')] bg-cover bg-center min-h-dvh flex items-center">
+    <section className="hero-gradient py-20 lg:py-32 bg-[url('/images/line-bg.png')] bg-cover bg-center min-h-dvh flex items-center relative">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="space-y-4 text-center md:text-left">
               <h2 className="text-4xl md:text-7xl font-bold leading-tight">
-                Code Ethics & technologies & Services.
+                Code Ethics & Technologies & Services.
               </h2>
               <p>
                 At Code Ethics, we are committed to delivering innovative IT solutions with
@@ -29,6 +30,13 @@ const HomeHeroSection = () => {
             </div>
           </div>
         </div>
+        {/* <Image
+          src="/images/10.png"
+          alt="Code Ethics Team - Professional IT Solutions"
+          width={1024}
+          height={891}
+          className="absolute bottom-0 right-0 top-[10%] z-[-1] object-contain"
+        /> */}
       </div>
     </section>
   )

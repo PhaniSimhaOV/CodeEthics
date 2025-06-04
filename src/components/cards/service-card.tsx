@@ -13,35 +13,42 @@ import {
 } from '../ui/card'
 import { Button } from '../ui/button'
 
-const ServiceCard = () => {
+const ServiceCard = ({
+  title,
+  description,
+  image,
+  hoverImage,
+}: {
+  title: string
+  description: string
+  image: string
+  hoverImage: string
+}) => {
   return (
-    <Card className="relative">
+    <Card className="relative bg-background group overflow-hidden pt-[30px] px-[7px] pb-[50px]">
       <CardHeader>
-        <div className="relative h-16 w-16">
+        <div className="relative h-[125px] w-[108px]">
           <Image
-            src="/images/icons/sr-icon1.png"
+            src={image}
             alt="Service icon"
             fill
             className="object-contain transition-opacity group-hover:opacity-0"
           />
           <Image
-            src="/images/icons/sr-icon1-hover.png"
+            src={hoverImage}
             alt="Service icon hover"
             fill
             className="object-contain opacity-0 transition-opacity group-hover:opacity-100"
           />
         </div>
-        <CardTitle>AMS Engagement</CardTitle>
+        <CardTitle className="text-2xl md:text-[32px] font-bold pt-[50px]">{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <CardDescription>
-          Optimize digital transformation with our Application Management Services, ensuring peak
-          performance, scalability, and enhanced security.
-        </CardDescription>
+        <CardDescription className="text-md mb-[20px]">{description}</CardDescription>
       </CardContent>
       <CardFooter>
         <CardAction>
-          <Button asChild variant="link" className="group/btn">
+          <Button asChild variant="secondary" className="group/btn cursor-pointer relative z-1">
             <Link href="/contact">
               Get Service
               <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-y-[-2px]" />
@@ -49,7 +56,7 @@ const ServiceCard = () => {
           </Button>
         </CardAction>
       </CardFooter>
-      <div className="absolute bottom-0 left-0 right-0">
+      <div className="absolute -bottom-[130px] -right-[150px] -z-0 group-hover:bottom-0 group-hover:right-0 transition-all ease-in duration-500">
         <Image
           src="/images/bg/sr-h-bg.png"
           alt="Background decoration"

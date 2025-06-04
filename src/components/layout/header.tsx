@@ -8,17 +8,25 @@ import Image from 'next/image'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Separator } from '@radix-ui/react-separator'
 import { navigation } from '@/constants'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export function Header() {
   const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
 
-  if (typeof window !== 'undefined') {
-    window?.addEventListener('scroll', () => {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
       setIsScrolled(window.scrollY >= 90)
-    })
-  }
+      window?.addEventListener('scroll', () => {
+        setIsScrolled(window.scrollY >= 90)
+      })
+    }
+    return () => {
+      if (typeof window !== 'undefined') {
+        window?.removeEventListener('scroll', () => {})
+      }
+    }
+  }, [])
 
   return (
     <header
