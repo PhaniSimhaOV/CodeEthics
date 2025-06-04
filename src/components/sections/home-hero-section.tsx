@@ -2,7 +2,9 @@ import React from 'react'
 import { Button } from '@/components/ui/button'
 // import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
-import { Separator } from '../ui/separator'
+import { Separator } from '@/components/ui/separator'
+import Link from 'next/link'
+import { appRoute } from '@/constants/routes'
 
 const HomeHeroSection = () => {
   return (
@@ -11,7 +13,7 @@ const HomeHeroSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="space-y-4 text-center md:text-left">
-              <h2 className="text-4xl md:text-7xl font-bold leading-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
                 Code Ethics & Technologies & Services.
               </h2>
               <p>
@@ -23,9 +25,11 @@ const HomeHeroSection = () => {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 items-center">
               <Separator className="!w-[25%] bg-primary" />
-              <Button size="lg" variant="link" className="text-white">
-                Discover Now
-                <ArrowUpRight className="ml-2 h-4 w-4" />
+              <Button size="lg" variant="link" asChild className="text-white">
+                <Link href={appRoute.contact}>
+                  Discover Now
+                  <ArrowUpRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
             </div>
           </div>

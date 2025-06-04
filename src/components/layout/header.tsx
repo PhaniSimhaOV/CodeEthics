@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Separator } from '@radix-ui/react-separator'
-import { navigation } from '@/constants'
+import { appRoute, navigation } from '@/constants/routes'
 import { useEffect, useState } from 'react'
 
 export function Header() {
@@ -39,7 +39,7 @@ export function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/">
+            <Link href={appRoute.home}>
               <Image
                 src="/images/logo.png"
                 alt="Code Ethics Logo"

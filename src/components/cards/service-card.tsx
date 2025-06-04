@@ -10,22 +10,31 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '../ui/card'
-import { Button } from '../ui/button'
+} from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+import { appRoute } from '@/constants/routes'
 
 const ServiceCard = ({
   title,
   description,
   image,
   hoverImage,
+  className,
 }: {
   title: string
   description: string
   image: string
   hoverImage: string
+  className?: string
 }) => {
   return (
-    <Card className="relative bg-background group overflow-hidden pt-[30px] px-[7px] pb-[50px]">
+    <Card
+      className={cn(
+        'relative bg-background group overflow-hidden pt-[30px] px-[7px] pb-[50px]',
+        className,
+      )}
+    >
       <CardHeader>
         <div className="relative h-[125px] w-[108px]">
           <Image
@@ -49,7 +58,7 @@ const ServiceCard = ({
       <CardFooter>
         <CardAction>
           <Button asChild variant="secondary" className="group/btn cursor-pointer relative z-1">
-            <Link href="/contact">
+            <Link href={appRoute.contact}>
               Get Service
               <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-y-[-2px]" />
             </Link>

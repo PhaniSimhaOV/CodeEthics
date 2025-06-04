@@ -5,6 +5,7 @@
 'use client'
 
 import AutoScroll from 'embla-carousel-auto-scroll'
+import Autoplay from 'embla-carousel-autoplay'
 
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import Image from 'next/image'
@@ -13,20 +14,23 @@ import Link from 'next/link'
 
 const ClientLogoSection = ({ logos }: { logos: Client[] }) => {
   return (
-    <section className="py-64">
-      <div className="container flex flex-col items-center text-center">
-        <h1 className="my-6 text-2xl font-bold text-pretty lg:text-4xl">
-          Trusted by these companies
-        </h1>
-      </div>
-      <div className="pt-10 md:pt-16 lg:pt-20">
-        <div className="relative mx-auto flex items-center justify-center lg:max-w-5xl">
-          <Carousel opts={{ loop: true }} plugins={[AutoScroll({ playOnInit: true })]}>
+    <section>
+      <div className="py-10 md:py-16 lg:py-20">
+        <div className="relative mx-auto flex items-center justify-center overflow-hidden">
+          <Carousel
+            opts={{ loop: true }}
+            plugins={[
+              AutoScroll({ playOnInit: true }),
+              Autoplay({
+                playOnInit: true,
+              }),
+            ]}
+          >
             <CarouselContent className="ml-0">
               {logos.map((logo) => (
                 <CarouselItem
                   key={logo.id}
-                  className="flex basis-1/3 justify-center pl-0 sm:basis-1/4 md:basis-1/5 lg:basis-1/6"
+                  className="flex basis-1/3 justify-center pl-0 sm:basis-1/4 md:basis-1/5"
                 >
                   <div className="mx-10 flex shrink-0 items-center justify-center">
                     <Link href={logo?.website || '#'} target="_blank" rel="noopener noreferrer">
@@ -43,8 +47,6 @@ const ClientLogoSection = ({ logos }: { logos: Client[] }) => {
               ))}
             </CarouselContent>
           </Carousel>
-          <div className="absolute inset-y-0 left-0 w-12 bg-linear-to-r from-background to-transparent"></div>
-          <div className="absolute inset-y-0 right-0 w-12 bg-linear-to-l from-background to-transparent"></div>
         </div>
       </div>
     </section>

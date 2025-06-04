@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { navigation } from '@/constants'
+import { appRoute, navigation } from '@/constants/routes'
 import { Phone, Mail, MapPin } from 'lucide-react'
 
 export function Footer() {
@@ -113,7 +113,7 @@ export function Footer() {
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-sm text-center md:text-left">
                 Copyright © {new Date().getFullYear()}{' '}
-                <Link href="/" className="text-primary hover:underline">
+                <Link href={appRoute.home} className="text-primary hover:underline">
                   codeethics
                 </Link>
                 . All rights reserved.
