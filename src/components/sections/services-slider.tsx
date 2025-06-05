@@ -11,7 +11,7 @@ const ServicesSlider = () => {
     <section>
       <div className="container mx-auto px-4 py-8">
         <div className="text-center space-y-4">
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold">Our Best Services</h2>
+          <h2 className="main-title">Our Best Services</h2>
           <p className="">Transform Your Business with Our Expert Services</p>
         </div>
         <div className="py-10 md:py-16 lg:py-20">

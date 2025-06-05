@@ -17,7 +17,7 @@ const BreadcrumbSection = () => {
             <div className="w-full">
               <div className="text-center">
                 <div className="mb-6">
-                  <h2 className="font-bold text-4xl md:text-6xl">{routeName}</h2>
+                  <h2 className="main-title">{routeName}</h2>
                   <nav className="mt-6">
                     <ul className="flex items-center justify-center space-x-2">
                       <li>

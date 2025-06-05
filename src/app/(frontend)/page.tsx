@@ -2,6 +2,7 @@ import JoinCodeEthics from '@/components/cards/join-code-ethics'
 import TwoColumnLayout from '@/components/layout/two-column-layout'
 import ClientLogoSection from '@/components/sections/client-logo-section'
 import HomeHeroSection from '@/components/sections/home-hero-section'
+import OurOffices from '@/components/sections/our-offices'
 import ServicesSlider from '@/components/sections/services-slider'
 import { fetchClientLogos } from '@/services'
 import React from 'react'
@@ -28,7 +29,9 @@ export default async function HomePage() {
           'Started in the year 2022 with an aim to provide High Quality services in Information Technology & Consulting Domains.'
         }
         buttonText={'More'}
+        className="bg-[url('/images/bg/about-bg.png')] bg-cover bg-center md:py-32"
       />
+      <OurOffices />
       <TwoColumnLayout
         image={'/images/about_img_04.png'}
         caption={'What do We Do'}
@@ -38,6 +41,7 @@ export default async function HomePage() {
         }
         buttonText={'Discover More'}
         buttonVariant={'default'}
+        className="md:py-32"
       />
 
       <JoinCodeEthics />

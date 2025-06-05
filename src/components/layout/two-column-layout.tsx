@@ -5,6 +5,7 @@ import { appRoute } from '@/constants/routes'
 import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import { Separator } from '../ui/separator'
+import { cn } from '@/lib/utils'
 
 const TwoColumnLayout = ({
   image,
@@ -15,6 +16,7 @@ const TwoColumnLayout = ({
   descriptionList,
   buttonText,
   buttonVariant = 'outline',
+  className,
 }: {
   image: string
   caption: string
@@ -24,9 +26,10 @@ const TwoColumnLayout = ({
   descriptionList?: { id: string; title: string; text: string }[]
   buttonText: string
   buttonVariant?: 'outline' | 'default'
+  className?: string
 }) => {
   return (
-    <section className="py-16">
+    <section className={cn('py-16', className)}>
       <div className="container px-4">
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-6 ">
@@ -50,7 +53,7 @@ const TwoColumnLayout = ({
                   {caption}
                 </p>
               </div>
-              <h3 className="text-3xl md:text-6xl font-bold">{title}</h3>
+              <h3 className="secondary-title">{title}</h3>
 
               {list && list.length
                 ? list.map((item) => (

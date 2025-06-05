@@ -128,4 +128,12 @@
   .social-figure {
     @apply w-[150px] h-[150px] rounded-sm object-contain bg-white;
   }
+
+  .main-title {
+    @apply text-4xl md:text-5xl lg:text-7xl font-bold;
+  }
+
+  .secondary-title {
+    @apply text-3xl md:text-6xl font-bold;
+  }
 }
