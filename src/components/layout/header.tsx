@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 import { Phone, Mail } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import { Separator } from '@radix-ui/react-separator'
 import { appRoute, navigation } from '@/constants/routes'
 import { useEffect, useState } from 'react'
@@ -101,6 +101,15 @@ export function Header() {
                 <Image src="/images/toggle-menu.png" alt="Menu" width={24} height={24} />
               </SheetTrigger>
               <SheetContent className="overflow-y-auto">
+                <SheetTitle>
+                  <Image
+                    src="/images/cp-logo.png"
+                    alt="Code Ethics Menu"
+                    width={55}
+                    height={30}
+                    className="h-auto mt-2"
+                  />
+                </SheetTitle>
                 <div className="flex flex-col gap-4 py-8 px-4">
                   {navigation.map((item) => (
                     <div key={item.name}>

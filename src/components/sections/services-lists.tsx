@@ -4,7 +4,7 @@ import { services } from '@/constants/services'
 
 const ServicesLists = () => {
   return (
-    <div className="bg-[url('/images/line-bg.png')] bg-scroll">
+    <section className="bg-[url('/images/line-bg.png')] bg-scroll">
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mx-6 md:mx-16 my-16">
           {services.map((service) => (
@@ -12,7 +12,7 @@ const ServicesLists = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

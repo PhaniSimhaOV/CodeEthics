@@ -42,7 +42,7 @@ const faqList = [
 const FaqList = () => {
   return (
     <section className="py-16">
-      <div className="container">
+      <div className="container px-4">
         <h2 className="text-4xl font-bold text-center">Frequently Asked Questions</h2>
         <Accordion type="single" collapsible className="w-full" defaultValue="item-1">
           {faqList.map((faq) => (

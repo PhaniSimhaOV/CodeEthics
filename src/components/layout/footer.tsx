@@ -11,7 +11,7 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Logo & Social Section */}
             <div className="space-y-6">
-              <Link href="/">
+              <Link href={appRoute.home}>
                 <Image
                   src="/images/logo.png"
                   alt="Code Ethics Logo"
@@ -120,7 +120,7 @@ export function Footer() {
               </p>
               <Image
                 src="/images/cp-logo.png"
-                alt="Company Logo"
+                alt="Code Ethics Logo"
                 width={55}
                 height={30}
                 className="h-auto"

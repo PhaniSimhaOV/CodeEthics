@@ -12,7 +12,7 @@ const JoinCodeEthics = () => {
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
             Join the Code Ethics Community Today!
           </h2>
-          <Button variant={'secondary'} size={'lg'} asChild className="py-8">
+          <Button variant={'secondary'} size={'lg'} asChild>
             <Link href={appRoute.contact}>
               Explore Solutions With Us
               <ArrowUpRight className="ml-2 h-4 w-4" />
