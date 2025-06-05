@@ -1,22 +1,11 @@
-import Image from 'next/image'
 import React from 'react'
+import TitleWLogo from '@/components/common/title-w-logo'
 
 const OurOffices = ({ hideTitle = false }: { hideTitle?: boolean }) => {
   return (
     <section className="py-16 md:py-32">
       <div className="container px-4">
-        {!hideTitle ? (
-          <div className="flex flex-col gap-4 items-center">
-            <Image
-              src="/images/cp-logo.png"
-              alt="Code Ethics Logo"
-              width={55}
-              height={30}
-              className="h-auto"
-            />
-            <h2 className="secondary-title">Our Offices</h2>
-          </div>
-        ) : null}
+        {!hideTitle ? <TitleWLogo title="Our Offices" /> : null}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 mt-10 lg:px-36">
           <div className="flex flex-col gap-4">
             {/* show map here */}

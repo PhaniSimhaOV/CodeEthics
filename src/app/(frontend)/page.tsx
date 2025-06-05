@@ -4,6 +4,7 @@ import BlueBgSection from '@/components/sections/blue-bg-section'
 import ClientLogoSection from '@/components/sections/client-logo-section'
 import HomeHeroSection from '@/components/sections/home-hero-section'
 import OurOffices from '@/components/sections/our-offices'
+import OurTeamSection from '@/components/sections/our-team-section'
 import ServicesSlider from '@/components/sections/services-slider'
 import { fetchClientLogos } from '@/services'
 import React from 'react'
@@ -51,6 +52,7 @@ export default async function HomePage() {
         }
         image={'/images/bg/using-laptop-ai.webp'}
       />
+      <OurTeamSection />
       <JoinCodeEthics />
     </>
   )
