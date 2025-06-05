@@ -4,6 +4,7 @@ import { fetchClientLogos } from '@/services'
 import ClientLogoSection from '@/components/sections/client-logo-section'
 import JoinCodeEthics from '@/components/cards/join-code-ethics'
 import TwoColumnLayout from '@/components/layout/two-column-layout'
+import BlueBgSection from '@/components/sections/blue-bg-section'
 
 const ServicesPage = async () => {
   const clientLogos = await fetchClientLogos()
@@ -20,6 +21,13 @@ const ServicesPage = async () => {
         }
         buttonText={'Discover More'}
         buttonVariant={'default'}
+      />
+      <BlueBgSection
+        title={'Innovative IT Solutions, Tailored for Creative Excellence.'}
+        description={
+          'Empowering creative agencies with innovative IT solutions designed to streamline workflows and ignite imagination. Let technology fuel your creativity and drive success'
+        }
+        image={'/images/bg/business-meeting.webp'}
       />
       <JoinCodeEthics />
     </>

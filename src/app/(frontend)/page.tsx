@@ -1,5 +1,6 @@
 import JoinCodeEthics from '@/components/cards/join-code-ethics'
 import TwoColumnLayout from '@/components/layout/two-column-layout'
+import BlueBgSection from '@/components/sections/blue-bg-section'
 import ClientLogoSection from '@/components/sections/client-logo-section'
 import HomeHeroSection from '@/components/sections/home-hero-section'
 import OurOffices from '@/components/sections/our-offices'
@@ -43,7 +44,13 @@ export default async function HomePage() {
         buttonVariant={'default'}
         className="md:py-32"
       />
-
+      <BlueBgSection
+        title={'Services & Domains'}
+        description={
+          'We have expertise in Application Development & Maintenance, Technology & Digital Transformation, Product Implementation, Data Engineering, Artificial Intelligence, AMS, CRM, CMS, ERP, Quality Assurance & SRE Services. Domain expertise : We provide end to end technology services to various industries like Financial Services, Health Care and Hospitality, Manufacturing, Media, Gaming & Telecom, Automobile, Education & Public services'
+        }
+        image={'/images/bg/using-laptop-ai.webp'}
+      />
       <JoinCodeEthics />
     </>
   )
