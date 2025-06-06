@@ -1,9 +1,18 @@
+import { authenticated } from '@/access/authenticated'
 import { CollectionConfig } from 'payload'
 
 export const Clients: CollectionConfig = {
   slug: 'clients',
+  admin: {
+    useAsTitle: 'name',
+    defaultColumns: ['id', 'logo', 'name', 'website', 'createdAt'],
+    hideAPIURL: true,
+  },
   access: {
     read: () => true, // Public read access
+    create: authenticated,
+    update: authenticated,
+    delete: authenticated,
   },
   fields: [
     {
@@ -20,7 +29,6 @@ export const Clients: CollectionConfig = {
     {
       name: 'website',
       type: 'text',
-      required: true,
     },
   ],
 }
