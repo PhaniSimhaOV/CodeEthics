@@ -161,7 +161,12 @@ export interface JobOpening {
   id: string;
   image?: (string | null) | Media;
   title: string;
-  description: string;
+  keyResponsibilities?:
+    | {
+        text: string;
+        id?: string | null;
+      }[]
+    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -173,7 +178,7 @@ export interface Client {
   id: string;
   logo: string | Media;
   name: string;
-  website: string;
+  website?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -282,7 +287,12 @@ export interface MediaSelect<T extends boolean = true> {
 export interface JobOpeningsSelect<T extends boolean = true> {
   image?: T;
   title?: T;
-  description?: T;
+  keyResponsibilities?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }
