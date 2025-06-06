@@ -26,7 +26,7 @@ const MvcSection = () => {
   return (
     <section className="py-16">
       <div className="container px-4 text-center">
-        <h2 className="tertiary-title">Our Mission, Vision & Core Values</h2>
+        <h3 className="tertiary-title">Our Mission, Vision & Core Values</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 md:mt-16">
           {mvcData.map((item) => (
             <div className="flex flex-col items-center justify-center gap-4" key={item.title}>
