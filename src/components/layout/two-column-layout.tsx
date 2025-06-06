@@ -7,6 +7,23 @@ import Image from 'next/image'
 import { Separator } from '../ui/separator'
 import { cn } from '@/lib/utils'
 
+type List = { id: string; text: string }
+type DescriptionList = List & { title: string }
+
+interface TwoColumnLayoutProps {
+  image: string
+  caption?: string
+  title: string
+  list?: List[]
+  description?: string
+  descriptionList?: DescriptionList[]
+  twoColumnDescription?: List[]
+  buttonText: string
+  buttonVariant?: 'outline' | 'default'
+  className?: string
+  isReverse?: boolean
+}
+
 const TwoColumnLayout = ({
   image,
   caption,
@@ -14,46 +31,40 @@ const TwoColumnLayout = ({
   list,
   description,
   descriptionList,
+  twoColumnDescription,
   buttonText,
   buttonVariant = 'outline',
   className,
-}: {
-  image: string
-  caption: string
-  title: string
-  list?: { id: string; text: string }[]
-  description?: string
-  descriptionList?: { id: string; title: string; text: string }[]
-  buttonText: string
-  buttonVariant?: 'outline' | 'default'
-  className?: string
-}) => {
+  isReverse = false,
+}: TwoColumnLayoutProps) => {
   return (
     <section className={cn('py-16', className)}>
       <div className="container px-4">
-        <div className="grid grid-cols-12 gap-6">
-          <div className="col-span-12 md:col-span-6 ">
-            <div className="w-full flex justify-center items-center">
+        <div className={cn('flex gap-6', isReverse ? 'flex-row-reverse' : '')}>
+          <div className="w-full lg:w-[50%]">
+            <div className="w-full h-full flex justify-center items-center">
               {/* media */}
               <Image src={image} alt={'media'} width={500} height={500} />
             </div>
           </div>
-          <div className="col-span-12 md:col-span-6">
+          <div className="w-full lg:w-[50%]">
             <div className="h-full flex flex-col justify-center gap-5">
               {/* content */}
-              <div className="flex gap-3">
-                <Image
-                  src="/images/cp-logo.png"
-                  alt={'media'}
-                  width={40}
-                  height={40}
-                  className="object-contain"
-                />
-                <p className="uppercase font-semibold text-muted-foreground tracking-[.3em]">
-                  {caption}
-                </p>
-              </div>
-              <h3 className="secondary-title">{title}</h3>
+              {caption ? (
+                <div className="flex gap-3">
+                  <Image
+                    src="/images/cp-logo.png"
+                    alt={'media'}
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                  <p className="uppercase font-semibold text-muted-foreground tracking-[.3em]">
+                    {caption}
+                  </p>
+                </div>
+              ) : null}
+              <h3 className="secondary-title mb-4 md:mb-8">{title}</h3>
 
               {list && list.length
                 ? list.map((item) => (
@@ -64,16 +75,30 @@ const TwoColumnLayout = ({
                   ))
                 : null}
 
-              <p className="text-muted-foreground">{description}</p>
+              {description ? <p className="text-muted-foreground/70">{description}</p> : null}
 
               {descriptionList && descriptionList.length
                 ? descriptionList.map((item) => (
                     <div key={item.id}>
                       <h4 className="text-2xl font-bold mb-2">{item.title}</h4>
-                      <p className="text-muted-foreground">{item.text}</p>
+                      <p className="text-muted-foreground/70">{item.text}</p>
                     </div>
                   ))
                 : null}
+
+              <div className="grid grid-cols-12 gap-4">
+                {twoColumnDescription && twoColumnDescription.length
+                  ? twoColumnDescription.map((item) => (
+                      <div
+                        key={item.id}
+                        className="col-span-12 md:col-span-6 flex flex-col gap-4 justify-between"
+                      >
+                        <p className="text-muted-foreground/70">{item.text}</p>
+                        <Separator />
+                      </div>
+                    ))
+                  : null}
+              </div>
 
               <div>
                 <Button variant={buttonVariant} size={'lg'} asChild>
