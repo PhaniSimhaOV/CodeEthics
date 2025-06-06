@@ -40,7 +40,9 @@ const TwoColumnLayout = ({
   return (
     <section className={cn('py-16', className)}>
       <div className="container px-4">
-        <div className={cn('flex gap-6', isReverse ? 'flex-row-reverse' : '')}>
+        <div
+          className={cn('flex flex-col gap-6', isReverse ? 'md:flex-row-reverse' : 'md:flex-row')}
+        >
           <div className="w-full lg:w-[50%]">
             <div className="w-full h-full flex justify-center items-center">
               {/* media */}

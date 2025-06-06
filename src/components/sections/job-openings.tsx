@@ -5,9 +5,7 @@ const JobOpenings = async ({ jobOpenings }: { jobOpenings: JobOpening[] }) => {
   return (
     <section className="py-32">
       <div className="container px-4">
-        <h3 className="text-2xl md:text-4xl font-semibold mb-8 text-center">
-          Current Job Openings
-        </h3>
+        <h3 className="tertiary-title mb-8 text-center">Current Job Openings</h3>
         {jobOpenings && jobOpenings.length > 0 ? (
           jobOpenings?.map((job, index) => {
             return (

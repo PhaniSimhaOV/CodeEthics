@@ -28,7 +28,7 @@ export default buildConfig({
       description: 'Code Ethics is a platform for sharing and discussing ethical coding practices.',
       icons: [
         {
-          url: '/images/icons/favicon.ico',
+          url: './images/icons/favicon.ico',
         },
       ],
     },
