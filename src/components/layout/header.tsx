@@ -72,11 +72,15 @@ export function Header() {
               <div className="text-sm space-y-2">
                 <div className="flex items-center space-x-2">
                   <Phone className="h-4 w-4 text-primary" />
-                  <p>+97 155 788 6713</p>
+                  <p>
+                    <Link href="tel:+971557886713">+97 155 788 6713</Link>
+                  </p>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Mail className="h-4 w-4 text-primary" />
-                  <p>nm@codeethics.in</p>
+                  <p>
+                    <Link href="mailto:nm@codeethics.in">nm@codeethics.in</Link>
+                  </p>
                 </div>
               </div>
             </div>
@@ -84,11 +88,15 @@ export function Header() {
               <div className="text-sm space-y-2">
                 <div className="flex items-center space-x-2">
                   <Phone className="h-4 w-4 text-primary" />
-                  <p>+91 83741 56296</p>
+                  <p>
+                    <Link href="tel:+918374156296">+91 83741 56296</Link>
+                  </p>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Mail className="h-4 w-4 text-primary" />
-                  <p>info@codeethics.in</p>
+                  <p>
+                    <Link href="mailto:info@codeethics.in">info@codeethics.in</Link>
+                  </p>
                 </div>
               </div>
             </div>

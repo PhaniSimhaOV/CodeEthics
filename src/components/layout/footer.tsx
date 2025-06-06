@@ -51,36 +51,48 @@ export function Footer() {
               <div className="space-y-3 text-sm">
                 <div className="flex items-start gap-2">
                   <Phone className="h-4 w-4 mt-1 text-primary" />
-                  <p>+91 74161 94172, +971 55 788 6713</p>
+                  <p>
+                    <Link href="tel:+917416194172">+91 74161 94172</Link>,{' '}
+                    <Link href="tel:+971557886713">+971 55 788 6713</Link>
+                  </p>
                 </div>
 
-                <div className="flex items-start gap-2">
+                <address className="flex items-start gap-2 not-italic">
                   <div className="h-4 w-4">
                     <MapPin className="h-4 w-4 text-primary" />
                   </div>
                   <p>
-                    India Address: Honer Vivantis, Tellapur Road, Gopanpally, Hyderabad, Telangana,
-                    India
+                    India Address:{' '}
+                    <Link href="https://maps.app.goo.gl/VRJZgyZ3EAuRpmL77">
+                      Honer Vivantis, Tellapur Road, Gopanpally, Hyderabad, Telangana, India
+                    </Link>
                   </p>
-                </div>
+                </address>
 
-                <div className="flex items-start gap-2">
+                <address className="flex items-start gap-2 not-italic">
                   <div className="h-4 w-4">
                     <MapPin className="h-4 w-4 text-primary" />
                   </div>
                   <p>
-                    UAE Address: Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, United
-                    Arab Emirates
+                    UAE Address:{' '}
+                    <Link href="https://maps.app.goo.gl/ZstKFFUfJbhpYByg8">
+                      Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, United Arab
+                      Emirates
+                    </Link>
                   </p>
-                </div>
+                </address>
 
                 <div className="flex items-start gap-2">
                   <Mail className="h-4 w-4 mt-1 text-primary" />
-                  <p>info@codeethics.in</p>
+                  <p>
+                    <Link href="mailto:info@codeethics.in">info@codeethics.in</Link>
+                  </p>
                 </div>
                 <div className="flex items-start gap-2">
                   <Mail className="h-4 w-4 mt-1 text-primary" />
-                  <p>nm@codeethics.in</p>
+                  <p>
+                    <Link href="mailto:nm@codeethics.in">nm@codeethics.in</Link>
+                  </p>
                 </div>
               </div>
             </div>
