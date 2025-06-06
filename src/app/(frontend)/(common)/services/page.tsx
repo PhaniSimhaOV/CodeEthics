@@ -5,6 +5,7 @@ import ClientLogoSection from '@/components/sections/client-logo-section'
 import JoinCodeEthics from '@/components/cards/join-code-ethics'
 import TwoColumnLayout from '@/components/layout/two-column-layout'
 import BlueBgSection from '@/components/sections/blue-bg-section'
+import TestimonialSection from '@/components/sections/testimonial-section'
 
 const ServicesPage = async () => {
   const clientLogos = await fetchClientLogos()
@@ -29,6 +30,7 @@ const ServicesPage = async () => {
         }
         image={'/images/bg/business-meeting.webp'}
       />
+      <TestimonialSection />
       <JoinCodeEthics />
     </>
   )
