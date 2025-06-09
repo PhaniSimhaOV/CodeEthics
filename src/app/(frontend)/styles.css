@@ -138,7 +138,7 @@
   }
 
   .secondary-title {
-    @apply text-3xl md:text-6xl font-bold;
+    @apply text-3xl md:text-5xl font-bold;
   }
 
   .tertiary-title {

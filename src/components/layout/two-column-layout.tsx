@@ -10,7 +10,7 @@ import { cn } from '@/lib/utils'
 type List = { id: string; text: string }
 type DescriptionList = List & { title: string }
 
-interface TwoColumnLayoutProps {
+export interface TwoColumnLayoutProps {
   image: string
   caption?: string
   title: string

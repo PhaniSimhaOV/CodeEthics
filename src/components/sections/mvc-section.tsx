@@ -1,26 +1,6 @@
+import { mvcData } from '@/constants/about-page'
 import Image from 'next/image'
 import React from 'react'
-
-const mvcData = [
-  {
-    icon: '/images/icons/handshake.png',
-    title: 'Mission',
-    description:
-      'To partner with our customers to provide the best in class services to meet their business priorities efficiently & effectively.',
-  },
-  {
-    icon: '/images/icons/bar-chart.png',
-    title: 'Vision',
-    description:
-      'To be a leading service provider through green solutions & sustainable business growth.',
-  },
-  {
-    icon: '/images/icons/puzzle.png',
-    title: 'Core Values',
-    description:
-      'We follow Core Ethics: Creativity, Open Mindedness, Dynamics, Enthusiasm, Excellence, Trust, Humility, Integrity, Curiosity & Simplicity.',
-  },
-]
 
 const MvcSection = () => {
   return (

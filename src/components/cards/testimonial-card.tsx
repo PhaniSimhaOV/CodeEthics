@@ -4,17 +4,14 @@ import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
 import { Separator } from '../ui/separator'
 import Image from 'next/image'
 
-const TestimonialCard = ({
-  name,
-  image,
-  quote,
-  company,
-}: {
+export type TestimonialCardProps = {
   name: string
   image?: string
   quote: string
   company: string
-}) => {
+}
+
+const TestimonialCard = ({ name, image, quote, company }: TestimonialCardProps) => {
   return (
     <Card className="md:px-5 md:py-12 bg-[url('/images/bg/box-bg.png')] bg-no-repeat bg-cover bg-card/20">
       <CardHeader className="flex items-center gap-4">

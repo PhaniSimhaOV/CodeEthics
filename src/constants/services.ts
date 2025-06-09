@@ -1,3 +1,6 @@
+import { TestimonialCardProps } from '@/components/cards/testimonial-card'
+import { TwoColumnLayoutProps } from '@/components/layout/two-column-layout'
+
 export const services = [
   {
     id: 1,
@@ -86,5 +89,38 @@ export const services = [
       'Empower your business with secure, reliable cloud solutions offering on-demand access and scalable infrastructure.',
     image: '/images/icons/sr-icon11.png',
     hoverImage: '/images/icons/sr-icon11-hover.png',
+  },
+]
+
+export const servicesPageWhatWeDo: TwoColumnLayoutProps = {
+  image: '/images/pexels-kampus-8204322.jpg',
+  caption: 'What do We Do',
+  title: 'Unleash the Power of Ethical Innovation',
+  description:
+    "In today's rapidly evolving world, innovation isn't just about creating new technologies—it's about creating meaningful solutions that prioritize integrity, responsibility, and sustainability. Ethical innovation goes beyond mere advancement; it is about ensuring that progress serves not only the bottom line but also society and the planet. At its core, ethical innovation is about making thoughtful decisions that balance technological progress with the well-being of individuals, communities, and the environment. It challenges businesses and innovators to ask: How can we create new opportunities without compromising the values that matter most?",
+  buttonText: 'Discover More',
+  buttonVariant: 'default',
+  className: 'md:pt-32',
+}
+
+export const servicesPageServices = {
+  title: 'Innovative IT Solutions, Tailored for Creative Excellence.',
+  description:
+    'Empowering creative agencies with innovative IT solutions designed to streamline workflows and ignite imagination. Let technology fuel your creativity and drive success',
+  image: '/images/bg/business-meeting.webp',
+}
+
+export const testimonialList: TestimonialCardProps[] = [
+  {
+    name: 'Talal Ibrahim',
+    quote:
+      'We would like to express my appreciation for Code Ethics professionals. Their expertise, creativity and efficient collaboration significantly enhanced our project. We have received very positive feedback from our client. Thank you for delivering top-notch talent and we look forward to a continued collaboration!',
+    company: 'BBI',
+  },
+  {
+    name: 'Equellence',
+    quote:
+      'We are delighted with the exceptional service provided by the team at Code Ethics. Their professionalism, innovative solutions, and seamless collaboration were instrumental in the success of our project. The positive response from our stakeholders speaks volumes. Thank you for your outstanding work, and we eagerly anticipate future collaborations!',
+    company: 'Equellence',
   },
 ]
