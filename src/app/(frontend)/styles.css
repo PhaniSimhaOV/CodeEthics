@@ -121,6 +121,10 @@
 
   .container {
     @apply mx-auto;
+
+    @media (width >=96rem) {
+      @apply !max-w-[82rem];
+    }
   }
 }
 

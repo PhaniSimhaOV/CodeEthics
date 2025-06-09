@@ -55,7 +55,7 @@ const ServiceCard = ({
       <CardContent>
         <CardDescription className="text-md mb-[20px]">{description}</CardDescription>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="mt-auto">
         <CardAction>
           <Button asChild variant="secondary" className="group/btn cursor-pointer relative z-1">
             <Link href={appRoute.contact}>

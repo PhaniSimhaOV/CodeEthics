@@ -3,10 +3,10 @@ import TitleWLogo from '@/components/common/title-w-logo'
 
 const OurOffices = ({ hideTitle = false }: { hideTitle?: boolean }) => {
   return (
-    <section className="py-16 md:py-32">
+    <section className="py-16 md:pt-32">
       <div className="container px-4">
         {!hideTitle ? <TitleWLogo title="Our Offices" /> : null}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 mt-10 lg:px-36">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 mt-10">
           <div className="flex flex-col gap-4">
             {/* show map here */}
             <h3 className="text-2xl font-bold">Hyderabad, IN</h3>

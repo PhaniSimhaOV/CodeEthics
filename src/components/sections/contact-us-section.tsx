@@ -14,14 +14,16 @@ const ContactUsSection = () => {
   return (
     <section className="pb-16 -mt-14">
       <div className="container mx-auto px-4">
-        <div className="lg:px-36">
-          <h3 className="tertiary-title mb-20">Get in touch with Us</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div>
+          <h3 className="tertiary-title my-10 lg:mb-20 text-center lg:text-left">
+            Get in touch with Us
+          </h3>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             <div className="col-span-2">
               <ContactForm />
             </div>
-            <div className="col-span-1">
-              <div className="bg-card p-6 md:-mt-60 relative z-10 w-full">
+            <div className="col-span-2 lg:col-span-1">
+              <div className="bg-card p-6 lg:-mt-60 relative z-10 w-full">
                 <div className="flex flex-col gap-8">
                   <div className="flex items-start gap-4">
                     <PhoneCall className="w-8 h-8" />

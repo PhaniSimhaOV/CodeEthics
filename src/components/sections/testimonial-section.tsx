@@ -10,7 +10,7 @@ const TestimonialSection = () => {
           title="What Client Says?"
           description="Our clients appreciate our dedication to understanding their unique needs, delivering innovative solutions, and exceeding expectations. They value our expertise, seamless communication, and commitment to quality, which consistently drive exceptional results. Their trust and satisfaction fuel our passion for creating impactful, tailored services that help businesses thrive and succeed."
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mx-8 lg:mx-36 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-16">
           <TestimonialCard
             name="Talal Ibrahim"
             quote="We would like to express my appreciation for Code Ethics professionals. Their expertise, creativity and efficient collaboration significantly enhanced our project. We have received very positive feedback from our client. Thank you for delivering top-notch talent and we look forward to a continued collaboration!"

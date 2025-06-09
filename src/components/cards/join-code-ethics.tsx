@@ -8,7 +8,7 @@ const JoinCodeEthics = () => {
   return (
     <div>
       <div className="container">
-        <div className="flex items-center flex-wrap lg:flex-nowrap gap-6 justify-between  bg-[url('/images/bg/box-bg.png')] bg-contain bg-no-repeat bg-primary bg-position-[60%_100%] p-6 md:p-16 mx-4 md:mx-16">
+        <div className="flex items-center flex-wrap lg:flex-nowrap gap-6 justify-between  bg-[url('/images/bg/box-bg.png')] bg-contain bg-no-repeat bg-primary bg-position-[60%_100%] p-6 md:p-16">
           <h2 className="main-title leading-tight">Join the Code Ethics Community Today!</h2>
           <Button variant={'secondary'} size={'lg'} asChild>
             <Link href={appRoute.contact}>

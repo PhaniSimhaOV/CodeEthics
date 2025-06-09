@@ -13,7 +13,7 @@ const BlueBgSection = ({
   return (
     <section className="bg-[url('/images/bg/bg-blue.webp')] bg-cover bg-center py-16 lg:py-32">
       <div className="container px-4">
-        <div className="grid grid-cols-12 gap-4 lg:px-36 uppercase text-center sm:text-left">
+        <div className="grid grid-cols-12 gap-4 uppercase text-center sm:text-left">
           <div className="col-span-12 md:col-span-6">
             <div className="space-y-6 md:space-y-12">
               <h2 className="main-title leading-tight">{title}</h2>
