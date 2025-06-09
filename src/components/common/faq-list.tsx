@@ -41,21 +41,18 @@ const faqList = [
 
 const FaqList = () => {
   return (
-    <section className="py-16">
-      <div className="container px-4">
-        <h2 className="text-4xl font-bold text-center">Frequently Asked Questions</h2>
-        <Accordion type="single" collapsible className="w-full" defaultValue="item-1">
-          {faqList.map((faq) => (
-            <AccordionItem key={faq.id} value={`item-${faq.id}`}>
-              <AccordionTrigger className="cursor-pointer">{faq.question}</AccordionTrigger>
-              <AccordionContent className="flex flex-col gap-4 text-balance">
-                <p>{faq.answer}</p>
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </div>
-    </section>
+    <Accordion type="single" collapsible className="w-full" defaultValue="item-1">
+      {faqList.map((faq) => (
+        <AccordionItem key={faq.id} value={`item-${faq.id}`}>
+          <AccordionTrigger className="cursor-pointer text-lg font-bold">
+            {faq.question}
+          </AccordionTrigger>
+          <AccordionContent className="flex flex-col gap-4 text-balance text-muted-foreground/70 text-lg">
+            <p>{faq.answer}</p>
+          </AccordionContent>
+        </AccordionItem>
+      ))}
+    </Accordion>
   )
 }
 
