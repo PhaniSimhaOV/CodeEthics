@@ -18,10 +18,12 @@ interface TwoColumnLayoutProps {
   description?: string
   descriptionList?: DescriptionList[]
   twoColumnDescription?: List[]
-  buttonText: string
+  buttonText?: string
   buttonVariant?: 'outline' | 'default'
   className?: string
+  innerClassName?: string
   isReverse?: boolean
+  children?: React.ReactNode
 }
 
 const TwoColumnLayout = ({
@@ -35,18 +37,24 @@ const TwoColumnLayout = ({
   buttonText,
   buttonVariant = 'outline',
   className,
+  innerClassName,
   isReverse = false,
+  children,
 }: TwoColumnLayoutProps) => {
   return (
     <section className={cn('py-16', className)}>
       <div className="container px-4">
         <div
-          className={cn('flex flex-col gap-6', isReverse ? 'md:flex-row-reverse' : 'md:flex-row')}
+          className={cn(
+            'flex flex-col gap-6 md:gap-12',
+            isReverse ? 'md:flex-row-reverse' : 'md:flex-row',
+            innerClassName,
+          )}
         >
           <div className="w-full lg:w-[50%]">
             <div className="w-full h-full flex justify-center items-center">
               {/* media */}
-              <Image src={image} alt={'media'} width={500} height={500} />
+              <Image src={image} alt={'media'} width={500} height={500} className="w-auto h-auto" />
             </div>
           </div>
           <div className="w-full lg:w-[50%]">
@@ -88,28 +96,32 @@ const TwoColumnLayout = ({
                   ))
                 : null}
 
-              <div className="grid grid-cols-12 gap-4">
-                {twoColumnDescription && twoColumnDescription.length
-                  ? twoColumnDescription.map((item) => (
-                      <div
-                        key={item.id}
-                        className="col-span-12 md:col-span-6 flex flex-col gap-4 justify-between"
-                      >
-                        <p className="text-muted-foreground/70">{item.text}</p>
-                        <Separator />
-                      </div>
-                    ))
-                  : null}
-              </div>
+              {twoColumnDescription && twoColumnDescription.length ? (
+                <div className="grid grid-cols-12 gap-4">
+                  {twoColumnDescription.map((item) => (
+                    <div
+                      key={item.id}
+                      className="col-span-12 md:col-span-6 flex flex-col gap-4 justify-between"
+                    >
+                      <p className="text-muted-foreground/70">{item.text}</p>
+                      <Separator />
+                    </div>
+                  ))}
+                </div>
+              ) : null}
 
-              <div>
-                <Button variant={buttonVariant} size={'lg'} asChild>
-                  <Link href={appRoute.contact}>
-                    {buttonText}
-                    <ArrowUpRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
+              {children ? children : null}
+
+              {buttonText ? (
+                <div>
+                  <Button variant={buttonVariant} size={'lg'} asChild>
+                    <Link href={appRoute.contact}>
+                      {buttonText}
+                      <ArrowUpRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+              ) : null}
             </div>
           </div>
         </div>
