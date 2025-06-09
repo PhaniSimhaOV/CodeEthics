@@ -5,6 +5,7 @@ import ClientLogoSection from '@/components/sections/client-logo-section'
 import HomeHeroSection from '@/components/sections/home-hero-section'
 import OurOffices from '@/components/sections/our-offices'
 import OurTeamSection from '@/components/sections/our-team-section'
+import ServicesMarquee from '@/components/sections/services-marquee'
 import ServicesSlider from '@/components/sections/services-slider'
 import { homePageAboutUs, homePageServices, homePageWhatWeDo } from '@/constants/home-page'
 import { fetchClientLogos } from '@/services'
@@ -20,6 +21,7 @@ export default async function HomePage() {
       <ServicesSlider />
       <TwoColumnLayout {...homePageAboutUs} />
       <OurOffices />
+      <ServicesMarquee />
       <TwoColumnLayout {...homePageWhatWeDo} />
       <BlueBgSection {...homePageServices} />
       <OurTeamSection />

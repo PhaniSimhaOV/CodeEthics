@@ -25,12 +25,10 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
 
   return (
     <html lang="en">
-      <body className="dark">
-        <main>
-          <Header />
-          {children}
-          <Footer />
-        </main>
+      <body className="dark overflow-x-hidden">
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   )

@@ -124,3 +124,17 @@ export const testimonialList: TestimonialCardProps[] = [
     company: 'Equellence',
   },
 ]
+
+export const servicesMarquee = [
+  'AMS Engagement',
+  'Product Integration',
+  'Application Modernization',
+  'Technology Transformation',
+  'CRM Solutions',
+  'CMS Solutions',
+  'ERP Solutions',
+  'Mobile & Web Applications',
+  'Data Migration and Management',
+  'AI/ML',
+  'Cloud Services',
+]
