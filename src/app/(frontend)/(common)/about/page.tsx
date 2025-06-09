@@ -1,9 +1,10 @@
+import React from 'react'
 import TwoColumnLayout from '@/components/layout/two-column-layout'
 import ClientLogoSection from '@/components/sections/client-logo-section'
 import MvcSection from '@/components/sections/mvc-section'
 import VideoSection from '@/components/sections/video-section'
+import FaqSection from '@/components/sections/faq-section'
 import { fetchClientLogos } from '@/services'
-import React from 'react'
 
 const AboutPage = async () => {
   const clientLogos = await fetchClientLogos()
@@ -70,6 +71,7 @@ const AboutPage = async () => {
       <MvcSection />
       <ClientLogoSection logos={clientLogos?.docs ?? []} />
       <VideoSection />
+      <FaqSection />
     </>
   )
 }
