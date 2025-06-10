@@ -5,7 +5,6 @@
 'use client'
 
 import AutoScroll from 'embla-carousel-auto-scroll'
-import Autoplay from 'embla-carousel-autoplay'
 
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import Image from 'next/image'
@@ -16,21 +15,13 @@ const ClientLogoSection = ({ logos }: { logos: Client[] }) => {
   return (
     <section>
       <div className="py-10 md:py-16 lg:py-20">
-        <div className="relative mx-auto flex items-center justify-center overflow-hidden">
-          <Carousel
-            opts={{ loop: true }}
-            plugins={[
-              AutoScroll({ playOnInit: true }),
-              Autoplay({
-                playOnInit: true,
-              }),
-            ]}
-          >
+        <div className="container px-4 overflow-hidden">
+          <Carousel opts={{ loop: true }} plugins={[AutoScroll({ playOnInit: true })]}>
             <CarouselContent className="ml-0">
-              {logos.map((logo) => (
+              {[...logos, ...logos].map((logo, index) => (
                 <CarouselItem
-                  key={logo.id}
-                  className="flex basis-1/3 justify-center pl-0 sm:basis-1/4 md:basis-1/5"
+                  key={logo.id + index}
+                  className="flex basis-1/1 justify-center md:basis-1/3 lg:basis-1/6"
                 >
                   <div className="mx-10 flex shrink-0 items-center justify-center">
                     <Link href={logo?.website || '#'} target="_blank" rel="noopener noreferrer">
@@ -39,7 +30,7 @@ const ClientLogoSection = ({ logos }: { logos: Client[] }) => {
                         alt={logo.name}
                         height={100}
                         width={100}
-                        className="h-10 w-10 sm:h-12 sm:w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 object-cover"
+                        className="h-23 w-23 object-cover block"
                       />
                     </Link>
                   </div>

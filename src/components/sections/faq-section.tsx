@@ -18,7 +18,7 @@ const FaqSection = () => {
               alt="faq"
               width={500}
               height={500}
-              className="w-auto h-auto"
+              className="w-full h-auto"
             />
           </div>
           <div className="col-span-12 md:col-span-6">

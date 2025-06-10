@@ -3,9 +3,9 @@ import TwoColumnLayout from '../layout/two-column-layout'
 
 const JobOpenings = async ({ jobOpenings }: { jobOpenings: JobOpening[] }) => {
   return (
-    <section className="py-32">
+    <section className="py-12 md:py-32">
       <div className="container px-4">
-        <h3 className="tertiary-title mb-8 text-center">Current Job Openings</h3>
+        <h3 className="tertiary-title mb-4 md:mb-8 text-center">Current Job Openings</h3>
         {jobOpenings && jobOpenings.length > 0 ? (
           jobOpenings?.map((job, index) => {
             return (
@@ -23,6 +23,7 @@ const JobOpenings = async ({ jobOpenings }: { jobOpenings: JobOpening[] }) => {
                 }
                 buttonText={'More'}
                 isReverse={index % 2 === 0}
+                className="py-8 md:py-16"
               />
             )
           })

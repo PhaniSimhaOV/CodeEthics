@@ -12,18 +12,24 @@ const ServicesSlider = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="text-center space-y-4">
           <h2 className="main-title">Our Best Services</h2>
-          <p className="">Transform Your Business with Our Expert Services</p>
+          <p>Transform Your Business with Our Expert Services</p>
         </div>
         <div className="py-10 md:py-16 lg:py-20">
-          <div className="relative mx-auto flex items-center justify-center overflow-hidden">
-            <Carousel opts={{ loop: true }} plugins={[AutoScroll({ playOnInit: false })]}>
+          <div>
+            <Carousel
+              plugins={[AutoScroll({ playOnInit: true })]}
+              opts={{
+                align: 'start',
+                loop: true,
+              }}
+            >
               <CarouselContent className="ml-0">
                 {services.map((service) => (
                   <CarouselItem
                     key={service.id}
-                    className="flex basis-1/3 justify-center pl-0 sm:basis-1/4 md:basis-1/6"
+                    className="flex basis-1/1 justify-center pl-0 md:basis-1/2 lg:basis-1/4 mx-2"
                   >
-                    <ServiceCard {...service} className="max-w-[300px] select-none" />
+                    <ServiceCard {...service} className="select-none" />
                   </CarouselItem>
                 ))}
               </CarouselContent>

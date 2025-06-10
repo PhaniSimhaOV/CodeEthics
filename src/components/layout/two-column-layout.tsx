@@ -54,7 +54,7 @@ const TwoColumnLayout = ({
           <div className="w-full lg:w-[50%]">
             <div className="w-full h-full flex justify-center items-center">
               {/* media */}
-              <Image src={image} alt={'media'} width={500} height={500} className="w-auto h-auto" />
+              <Image src={image} alt={'media'} width={500} height={500} className="w-full h-auto" />
             </div>
           </div>
           <div className="w-full lg:w-[50%]">

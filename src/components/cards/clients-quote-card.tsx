@@ -11,7 +11,7 @@ const ClientsQuoteCard = ({ name, quote, company }: TestimonialCardProps) => {
         <Image src="/images/icons/review-icon.png" alt="logo" width={82} height={24} />
       </div>
       <div className="my-4 md:my-8">
-        {quote ? <p className="text-2xl md:text-3xl/normal">{`"${quote}"`}</p> : null}
+        {quote ? <p className="text-xl md:text-2xl lg:text-3xl/normal">{`"${quote}"`}</p> : null}
       </div>
       <div className="flex items-center justify-between gap-4 mt-auto">
         <p className="text-muted-foreground">{company}</p>

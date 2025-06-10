@@ -7,7 +7,7 @@ import AutoScroll from 'embla-carousel-auto-scroll'
 
 const ServicesMarquee = () => {
   return (
-    <div className="h-[100px] bg-accent">
+    <div className="h-[100px] bg-accent my-12 md:my-24">
       <div className="-rotate-3 bg-card">
         <Carousel opts={{ loop: true }} plugins={[AutoScroll({})]}>
           <CarouselContent className="ml-0 gap-4 items-center h-[100px]">
