@@ -1,5 +1,8 @@
+'use client'
+
 import React from 'react'
 import TitleWLogo from '@/components/common/title-w-logo'
+import { motion } from 'motion/react'
 
 const OurOffices = ({ hideTitle = false }: { hideTitle?: boolean }) => {
   return (
@@ -7,7 +10,13 @@ const OurOffices = ({ hideTitle = false }: { hideTitle?: boolean }) => {
       <div className="container px-4">
         {!hideTitle ? <TitleWLogo title="Our Offices" /> : null}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 mt-10">
-          <div className="flex flex-col gap-4">
+          <motion.div
+            className="flex flex-col gap-4"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             {/* show map here */}
             <h3 className="text-2xl font-bold">Hyderabad, IN</h3>
             <div className="w-full h-[300px] lg:h-[500px]">
@@ -22,8 +31,14 @@ const OurOffices = ({ hideTitle = false }: { hideTitle?: boolean }) => {
                 className="hue-rotate-[300deg]"
               />
             </div>
-          </div>
-          <div className="flex flex-col gap-4">
+          </motion.div>
+          <motion.div
+            className="flex flex-col gap-4"
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             <h3 className="text-2xl font-bold">Dubai, UAE</h3>
             <div className="w-full h-[300px] lg:h-[500px]">
               <iframe
@@ -37,7 +52,7 @@ const OurOffices = ({ hideTitle = false }: { hideTitle?: boolean }) => {
                 className="hue-rotate-[45deg]"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

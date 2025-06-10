@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import ContactForm from '@/components/forms/contact'
 import {
@@ -9,6 +11,7 @@ import {
   PhoneCall,
 } from 'lucide-react'
 import { Separator } from '../ui/separator'
+import { motion } from 'motion/react'
 
 const ContactUsSection = () => {
   return (
@@ -19,10 +22,22 @@ const ContactUsSection = () => {
             Get in touch with Us
           </h3>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            <div className="col-span-2">
+            <motion.div
+              className="col-span-2"
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               <ContactForm />
-            </div>
-            <div className="col-span-2 lg:col-span-1">
+            </motion.div>
+            <motion.div
+              className="col-span-2 lg:col-span-1"
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               <div className="bg-card p-6 lg:-mt-60 relative z-10 w-full">
                 <div className="flex flex-col gap-8">
                   <div className="flex items-start gap-4">
@@ -99,7 +114,7 @@ const ContactUsSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

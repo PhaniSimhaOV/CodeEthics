@@ -31,7 +31,7 @@ const ServiceCard = ({
   return (
     <Card
       className={cn(
-        'relative bg-background group overflow-hidden pt-[30px] px-[7px] pb-[50px]',
+        'relative bg-background group overflow-hidden pt-[30px] px-[7px] pb-[50px] h-full',
         className,
       )}
     >

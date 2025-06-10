@@ -1,11 +1,14 @@
+'use client'
+
 import React, { Fragment } from 'react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { appRoute } from '@/constants/routes'
 import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
-import { Separator } from '../ui/separator'
+import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils'
+import { motion } from 'motion/react'
 
 type List = { id: string; text: string }
 type DescriptionList = List & { title: string }
@@ -52,13 +55,25 @@ const TwoColumnLayout = ({
           )}
         >
           <div className="w-full lg:w-[50%]">
-            <div className="w-full h-full flex justify-center items-center">
+            <motion.div
+              className="w-full h-full flex justify-center items-center"
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               {/* media */}
               <Image src={image} alt={'media'} width={500} height={500} className="w-full h-auto" />
-            </div>
+            </motion.div>
           </div>
           <div className="w-full lg:w-[50%]">
-            <div className="h-full flex flex-col justify-center gap-5">
+            <motion.div
+              className="h-full flex flex-col justify-center gap-5"
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               {/* content */}
               {caption ? (
                 <div className="flex gap-3">
@@ -122,7 +137,7 @@ const TwoColumnLayout = ({
                   </Button>
                 </div>
               ) : null}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

@@ -13,7 +13,7 @@ export type TestimonialCardProps = {
 
 const TestimonialCard = ({ name, image, quote, company }: TestimonialCardProps) => {
   return (
-    <Card className="md:px-5 md:py-12 bg-[url('/images/bg/box-bg.png')] bg-no-repeat bg-cover bg-card/20">
+    <Card className="md:px-5 md:py-12 bg-[url('/images/bg/box-bg.png')] bg-no-repeat bg-cover bg-card/20 h-full">
       <CardHeader className="flex items-center gap-4">
         <Avatar className="size-16 md:size-21">
           <AvatarImage src={image || ''} alt={name} />
