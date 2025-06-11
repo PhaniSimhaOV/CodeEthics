@@ -3,6 +3,7 @@ import './styles.css'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { Metadata } from 'next'
+import { Toaster } from '@/components/ui/sonner'
 
 export const metadata: Metadata = {
   title: 'Code Ethics - Innovative IT Solutions & Services',
@@ -28,6 +29,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
       <body className="dark overflow-x-hidden">
         <Header />
         <main>{children}</main>
+        <Toaster richColors />
         <Footer />
       </body>
     </html>
