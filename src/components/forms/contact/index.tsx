@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { contactSchema, ContactSchema } from '@/components/forms/contact/schema'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -16,8 +16,10 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { ArrowUpRight } from 'lucide-react'
+import { toast } from 'sonner'
 
 const ContactForm = () => {
+  const [loader, setLoader] = useState(false)
   const form = useForm<ContactSchema>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -30,8 +32,32 @@ const ContactForm = () => {
     },
   })
 
-  const onSubmit = (data: ContactSchema) => {
-    console.log(data)
+  const onSubmit = async (data: ContactSchema) => {
+    try {
+      setLoader(true)
+      const response = await fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+      if (!response.ok) {
+        const errorData = await response.json()
+        console.error('Error sending email:', errorData)
+        toast.error('Error sending email. Please try again later.')
+      } else {
+        const data = await response.json()
+        console.log('Email sent successfully:', data)
+        toast.success('Email sent successfully!')
+        form.reset() // Reset the form after successful submission
+      }
+    } catch (error) {
+      console.log('Error submitting form:', error)
+      toast.error('Error submitting form. Please try again later.')
+    } finally {
+      setLoader(false)
+    }
   }
 
   return (
@@ -120,8 +146,8 @@ const ContactForm = () => {
           <div className="col-span-2 flex flex-col gap-4">
             <FormDescription>* Fill out the form to connect with us!</FormDescription>
             <div className="mt-4">
-              <Button type="submit" className="cursor-pointer">
-                Send Message
+              <Button type="submit" className="cursor-pointer" disabled={loader}>
+                {loader ? 'Sending Message...' : 'Send Message'}
                 <ArrowUpRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
