@@ -71,6 +71,7 @@ export interface Config {
     media: Media;
     'job-openings': JobOpening;
     clients: Client;
+    blogs: Blog;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -81,6 +82,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     'job-openings': JobOpeningsSelect<false> | JobOpeningsSelect<true>;
     clients: ClientsSelect<false> | ClientsSelect<true>;
+    blogs: BlogsSelect<false> | BlogsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -183,6 +185,60 @@ export interface Client {
   createdAt: string;
 }
 /**
+ * Blog posts shown on /blog. Posts are visible publicly only when "published" is true.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blogs".
+ */
+export interface Blog {
+  id: string;
+  title: string;
+  /**
+   * URL-friendly identifier. Auto-generated from title if left blank.
+   */
+  slug?: string | null;
+  author: string;
+  coverImage?: (string | null) | Media;
+  /**
+   * Short summary shown on listing cards (max 280 chars).
+   */
+  excerpt?: string | null;
+  body: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  /**
+   * Optional tags for filtering / display.
+   */
+  tags?:
+    | {
+        tag: string;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Used for sort order on the blog listing.
+   */
+  publishedAt?: string | null;
+  /**
+   * Unchecked = draft (hidden from /blog).
+   */
+  published?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
@@ -204,6 +260,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'clients';
         value: string | Client;
+      } | null)
+    | ({
+        relationTo: 'blogs';
+        value: string | Blog;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -304,6 +364,28 @@ export interface ClientsSelect<T extends boolean = true> {
   logo?: T;
   name?: T;
   website?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blogs_select".
+ */
+export interface BlogsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  author?: T;
+  coverImage?: T;
+  excerpt?: T;
+  body?: T;
+  tags?:
+    | T
+    | {
+        tag?: T;
+        id?: T;
+      };
+  publishedAt?: T;
+  published?: T;
   updatedAt?: T;
   createdAt?: T;
 }
