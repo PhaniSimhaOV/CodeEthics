@@ -43,6 +43,17 @@ export function Footer() {
                   <figcaption>Instagram</figcaption>
                 </figure>
               </div>
+              <div className="mt-6">
+                <iframe
+                  id="Iframe1"
+                  src="https://dunsregistered.dnb.com/SealAuthentication.aspx?Cid=1"
+                  width="114"
+                  height="97"
+                  frameBorder="0"
+                  scrolling="no"
+                  title="DUNS Registered Seal"
+                />
+              </div>
             </div>
 
             {/* Contact Section */}
