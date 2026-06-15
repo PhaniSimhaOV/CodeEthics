@@ -12,7 +12,12 @@ import { fetchClientLogos } from '@/services'
 import React from 'react'
 
 export default async function HomePage() {
-  const clientLogos = await fetchClientLogos()
+  let clientLogos = null
+  try {
+    clientLogos = await fetchClientLogos()
+  } catch (e) {
+    console.error('Failed to fetch client logos:', e)
+  }
 
   return (
     <>
