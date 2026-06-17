@@ -73,7 +73,7 @@ export function Header() {
                 <div className="flex items-center space-x-2">
                   <Phone className="h-4 w-4 text-primary" />
                   <p>
-                    <Link href="tel:+971557886713">+97 155 788 6713</Link>
+                    <Link href="tel:+919908854758">+91 99088 54758</Link>
                   </p>
                 </div>
                 <div className="flex items-center space-x-2">
@@ -95,7 +95,7 @@ export function Header() {
                 <div className="flex items-center space-x-2">
                   <Mail className="h-4 w-4 text-primary" />
                   <p>
-                    <Link href="mailto:info@codeethics.in">info@codeethics.in</Link>
+                    <Link href="mailto:ps@codeethics.in">ps@codeethics.in</Link>
                   </p>
                 </div>
               </div>

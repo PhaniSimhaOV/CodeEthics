@@ -45,9 +45,9 @@ const ContactUsSection = () => {
                     <div>
                       <p className="text-muted-foreground">Contact Phone</p>
                       <h5 className="font-semibold">
-                        +91 74161 94172
+                        +91 99088 54758
                         <br />
-                        +971 55 788 6713
+                        +91 83741 56296
                       </h5>
                     </div>
                   </div>
@@ -77,7 +77,7 @@ const ContactUsSection = () => {
                     <div>
                       <p className="text-muted-foreground">Contact email</p>
                       <h5 className="font-semibold">
-                        info@codeethics.in
+                        ps@codeethics.in
                         <br />
                         nm@codeethics.in
                       </h5>
