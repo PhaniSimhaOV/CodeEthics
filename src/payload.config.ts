@@ -35,7 +35,16 @@ const s3Plugin: Plugin | null = process.env.S3_BUCKET
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
+// Public URL of the deployed site. Needed by Payload to construct admin
+// redirect URLs correctly when running behind a CDN/proxy (e.g. CloudFront in
+// front of AWS Amplify), where the request `host` header may not be the
+// canonical public domain.
+const serverURL =
+  process.env.NEXT_PUBLIC_SERVER_URL ||
+  (process.env.NODE_ENV === 'production' ? 'https://www.codeethics.in' : 'http://localhost:3000')
+
 export default buildConfig({
+  serverURL,
   admin: {
     user: Users.slug,
     avatar: 'default',
