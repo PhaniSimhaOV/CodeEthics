@@ -161,8 +161,32 @@ export interface Media {
  */
 export interface JobOpening {
   id: string;
+  /**
+   * Cover image for the role. Recommended ratio 1:1 or 4:3. Displays alongside the description on /careers.
+   */
   image?: (string | null) | Media;
   title: string;
+  /**
+   * Rich-text job description — supports headings, bold, italics, lists, links, and quotes. Appears above the Key Responsibilities list on /careers.
+   */
+  description?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Short bullet points (up to 5) summarising the role.
+   */
   keyResponsibilities?:
     | {
         text: string;
@@ -347,6 +371,7 @@ export interface MediaSelect<T extends boolean = true> {
 export interface JobOpeningsSelect<T extends boolean = true> {
   image?: T;
   title?: T;
+  description?: T;
   keyResponsibilities?:
     | T
     | {

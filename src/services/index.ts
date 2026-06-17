@@ -3,9 +3,17 @@ import { PaginatedDocs } from 'payload'
 
 export const fetchJobOpenings = async (): Promise<PaginatedDocs<JobOpening> | null> => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/job-openings`, {
-      next: { revalidate: 0 },
+    // depth=2 so the related `image` (media) doc — and its nested fields —
+    // are populated on each job opening, not just returned as an ID string.
+    const params = new URLSearchParams({
+      depth: '2',
+      sort: '-createdAt',
+      limit: '50',
     })
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/job-openings?${params.toString()}`,
+      { next: { revalidate: 0 } },
+    )
 
     if (!response.ok) {
       throw new Error('Failed to fetch job openings')

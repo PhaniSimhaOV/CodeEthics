@@ -20,11 +20,24 @@ export const JobOpenings: CollectionConfig = {
       type: 'upload',
       relationTo: 'media',
       required: false,
+      admin: {
+        description:
+          'Cover image for the role. Recommended ratio 1:1 or 4:3. Displays alongside the description on /careers.',
+      },
     },
     {
       name: 'title',
       type: 'text',
       required: true,
+    },
+    {
+      name: 'description',
+      type: 'richText',
+      required: false,
+      admin: {
+        description:
+          'Rich-text job description — supports headings, bold, italics, lists, links, and quotes. Appears above the Key Responsibilities list on /careers.',
+      },
     },
     {
       type: 'array',
@@ -37,6 +50,9 @@ export const JobOpenings: CollectionConfig = {
           required: true,
         },
       ],
+      admin: {
+        description: 'Short bullet points (up to 5) summarising the role.',
+      },
     },
   ],
 }
