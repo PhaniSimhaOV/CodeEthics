@@ -63,8 +63,8 @@ export function Footer() {
                 <div className="flex items-start gap-2">
                   <Phone className="h-4 w-4 mt-1 text-primary" />
                   <p>
-                    <Link href="tel:+917416194172">+91 74161 94172</Link>,{' '}
-                    <Link href="tel:+971557886713">+971 55 788 6713</Link>
+                    <Link href="tel:+919908854758">+91 99088 54758</Link>,{' '}
+                    <Link href="tel:+918374156296">+91 83741 56296</Link>
                   </p>
                 </div>
 
@@ -96,7 +96,7 @@ export function Footer() {
                 <div className="flex items-start gap-2">
                   <Mail className="h-4 w-4 mt-1 text-primary" />
                   <p>
-                    <Link href="mailto:info@codeethics.in">info@codeethics.in</Link>
+                    <Link href="mailto:ps@codeethics.in">ps@codeethics.in</Link>
                   </p>
                 </div>
                 <div className="flex items-start gap-2">
